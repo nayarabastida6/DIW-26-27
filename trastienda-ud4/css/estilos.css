@@ -1,0 +1,31 @@
+body {
+    /* Fondo degradado en movimiento */
+    background: linear-gradient(#1d4ed8, #b6ec41);
+    min-height: 100vh;
+    font-family: sans-serif;
+    color: #333333;
+}
+
+header {
+  background-color: #9cacd9;
+}
+
+a {
+  color: #0d3091;
+}
+
+/* Integración de la imagen */
+#articulos-carrito article {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+#articulos-carrito article img {
+  width: 80px;
+  height: auto;
+}
+
+#articulos-carrito article h3 {
+    margin: 0
+}

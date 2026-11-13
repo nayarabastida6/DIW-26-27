@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi cesta</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html">La Trastienda</a>
+      <h2>Mi cesta · 2 artículos</h2>
+    </header>
+
+    <main>
+      <h1>Cesta</h1>
+
+      <section id="articulos-carrito">
+        <h2>Lista de artículos</h2>
+        <article>
+          <img src="img/la-paciente-silenciosa.jpg" alt="Portada de La paciente silenciosa"/>
+          <div>
+            <h3>La paciente silenciosa</h3>
+            <p>Alex Michaelides · Tapa dura</p>
+            <button type="button" aria-label="Quitar un ejemplar de La paciente silenciosa">−</button>
+            <span>1</span>
+            <button type="button" aria-label="Añadir un ejemplar de La paciente silenciosa">+</button>
+            <p>19,90 €</p>
+          </div>
+        </article>
+
+        <article>
+          <img src="img/el-silencio-de-la-ciudad-blanca.jpg" alt="Portada de El silencio de la ciudad blanca"/>
+          <div>
+            <h3>El silencio de la ciudad blanca</h3>
+            <p>Eva García Sáenz de Urturi · Ebook</p>
+            <button type="button" aria-label="Quitar un ejemplar de El silencio de la ciudad blanca">−</button>
+            <span>1</span>
+            <button type="button" aria-label="Añadir un ejemplar de El silencio de la ciudad blanca">+</button>
+            <p>9,99 €</p>
+          </div>
+        </article>
+      </section>
+
+      <section>
+        <h2>Resumen</h2>
+        <dl>
+          <dt>Subtotal</dt> 
+          <dd>29,89 €</dd>
+          <dt>Envío</dt>
+          <dd>Gratis</dd>
+          <dt>Total</dt>
+          <dd>29,89 €</dd>
+        </dl>
+        <button type="button">Tramitar pedido</button>
+      </section>
+    </main>
+
+    <nav aria-label="Secciones de la app">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="explorar.html">Explorar</a></li>
+        <li><a href="carrito.html" aria-current="page">Cesta</a></li>
+        <li><a href="perfil.html">Perfil</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
