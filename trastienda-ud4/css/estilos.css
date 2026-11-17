@@ -33,14 +33,57 @@
     --border-subtle: var(--color-neutral-200);
     
     --color-accent-oklch: oklch(65% 0.25 280);
+
+    /* Variables tipográficas */
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+    /* Escala tipográfica */
+    --text-xs: 0.75rem;    /* Caption (12 px) */
+    --text-sm: 0.875rem;   /* Body Small (14 px) */
+    --text-base: 1rem;     /* Body (16 px) */
+    --text-lg: 1.125rem;   /* H3 (18 px) */
+    --text-xl: 1.25rem;    /* H2 (20 px) */
+    --text-2xl: 1.5rem;    /* H1 (24 px) */
+    --text-3xl: 1.875rem;  /* Display (30 px) */
 }
 
 body {
     background: linear-gradient(135deg, var(--color-primary-200), var(--color-primary-700));
     min-height: 100vh;
-    font-family: sans-serif;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.5;
     color: var(--text-main);
 }
+
+
+/* TIPOGRAFÍA */
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+}
+
+h1 {
+    font-size: var(--text-2xl);
+}
+
+h2 {
+    font-size: var(--text-xl);
+}
+
+h3 {
+    font-size: var(--text-lg);
+}
+
+p {
+    max-width: 65ch;
+}
+
+
+
 
 header {
     background-color: var(--bg-card);
