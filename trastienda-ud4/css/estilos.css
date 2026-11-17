@@ -1,29 +1,73 @@
+:root {
+    /* Escala primaria */
+    --color-primary-50: #e6e6ff;
+    --color-primary-100: #ccccff;
+    --color-primary-200: #9999ff;
+    --color-primary-300: #6666ff;
+    --color-primary-400: #3333ff;
+    --color-primary-500: #0000ff;
+    --color-primary-600: #0000cc;
+    --color-primary-700: #000099;
+    --color-primary-800: #000066;
+    --color-primary-900: #000033;
+
+    /* Escala neutra */
+    --color-neutral-50: #fafafa;
+    --color-neutral-100: #f4f4f5;
+    --color-neutral-200: #e4e4e7;
+    --color-neutral-300: #d4d4d8;
+    --color-neutral-400: #a1a1aa;
+    --color-neutral-500: #71717a;
+    --color-neutral-600: #52525b;
+    --color-neutral-700: #3f3f46;
+    --color-neutral-800: #27272a;
+    --color-neutral-900: #18181b;
+
+    /* Variables semánticas */
+    --bg-page: var(--color-neutral-50);
+    --bg-card: #ffffff;
+    --text-main: var(--color-neutral-900);
+    --text-muted: var(--color-neutral-600);
+
+    --brand: var(--color-primary-500);
+    --border-subtle: var(--color-neutral-200);
+    
+    --color-accent-oklch: oklch(65% 0.25 280);
+}
+
 body {
-    /* Fondo degradado en movimiento */
-    background: linear-gradient(#0000FF, #FFFF00);
+    background: linear-gradient(135deg, var(--color-primary-200), var(--color-primary-700));
     min-height: 100vh;
     font-family: sans-serif;
-    color: #333333;
+    color: var(--text-main);
 }
 
 header {
-  background-color: #CECEDB;
+    background-color: var(--bg-card);
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+header a {
+    color: var(--brand);
+    font-weight: 700;
+    text-decoration: none;
 }
 
 a {
-  color: #000055;
+    color: #000055;
 }
 
 /* Integración de la imagen */
 #articulos-carrito article {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
 }
 
 #articulos-carrito article img {
-  width: 80px;
-  height: auto;
+    width: 80px;
+    height: auto;
 }
 
 #articulos-carrito article h3 {
@@ -33,35 +77,131 @@ a {
 
 
 /* SELECTORES */
-nav a[aria-current="page"] {
-  color: #0000FF;
-  font-weight: bold;
-}
-
-nav a:not([aria-current="page"]) {
-  color: gray;
-}
-
-nav a:hover {
-  color: #0000FF;
-}
-
-nav a:focus-visible {
-  outline: 2px solid #0000FF;
-}
-
 h2 + .card {
-  border: 2px solid #0000FF;
+    border: 2px solid var(--brand);
 }
 
 .badge:empty {
-  display: none;
+    display: none;
 }
 
 article:has(.badge:not(:empty)) {
-  border: 2px solid #0000FF;
+    border: 2px solid var(--brand);
 }
 
 button[aria-label] {
     padding: 0.25rem;
+}
+
+
+
+/* Experimento con oklch */
+.badge {
+    background-color: var(--color-accent-oklch);
+    color: white;
+}
+
+/* Anidamiento */
+nav {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-subtle);
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    a {
+        color: var(--text-muted);
+        text-decoration: none;
+
+        &[aria-current="page"] {
+            color: var(--brand);
+            font-weight: 700;
+        }
+
+        &:hover {
+            color: var(--text-main);
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--brand);
+        }
+    }
+}
+
+
+article.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin: 1rem 0;
+    color: var(--text-main);
+    box-shadow: 0 3px 8px rgb(24 24 27 / 10%);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 1rem;
+
+    h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1.1rem;
+
+        a {
+            color: var(--text-main);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--brand);
+            }
+        }
+    }
+
+    img {
+        width: 80px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 6px;
+        flex-shrink: 0;
+    }
+
+    p {
+        color: var(--text-muted);
+        margin: 0.5rem 0;
+        line-height: 1.5;
+    }
+
+    .precio {
+        color: var(--text-main);
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-top: 1rem;
+    }
+
+    .badge {
+        display: inline-block;
+        background-color: var(--color-accent-oklch);
+        color: white;
+        padding: 0.3rem 0.65rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+
+    button {
+        flex: 0 0 100%;
+        background-color: var(--brand);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 0.65rem 1rem;
+        margin-top: 0.5rem;
+        cursor: pointer;
+    }
 }
