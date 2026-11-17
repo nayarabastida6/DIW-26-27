@@ -1,17 +1,17 @@
 body {
     /* Fondo degradado en movimiento */
-    background: linear-gradient(#1d4ed8, #b6ec41);
+    background: linear-gradient(#0000FF, #FFFF00);
     min-height: 100vh;
     font-family: sans-serif;
     color: #333333;
 }
 
 header {
-  background-color: #9cacd9;
+  background-color: #CECEDB;
 }
 
 a {
-  color: #0d3091;
+  color: #000055;
 }
 
 /* Integración de la imagen */
@@ -28,4 +28,40 @@ a {
 
 #articulos-carrito article h3 {
     margin: 0
+}
+
+
+
+/* SELECTORES */
+nav a[aria-current="page"] {
+  color: #0000FF;
+  font-weight: bold;
+}
+
+nav a:not([aria-current="page"]) {
+  color: gray;
+}
+
+nav a:hover {
+  color: #0000FF;
+}
+
+nav a:focus-visible {
+  outline: 2px solid #0000FF;
+}
+
+h2 + .card {
+  border: 2px solid #0000FF;
+}
+
+.badge:empty {
+  display: none;
+}
+
+article:has(.badge:not(:empty)) {
+  border: 2px solid #0000FF;
+}
+
+button[aria-label] {
+    padding: 0.25rem;
 }
